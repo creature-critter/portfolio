@@ -4,19 +4,19 @@ import { useState } from "react";
 
 const photos = [
   {
-    src: "/about-photo-cafe.svg",
+    src: "/about-photo-cafe.jpg",
     title: "sixby @ savannah, ga",
     subtitle: "my favorite cafe",
     activity: "Drinking an espresso tonic",
   },
   {
-    src: "/about-photo-canal.svg",
+    src: "/about-photo-canal.jpg",
     title: "somewhere @ erie canal",
     subtitle: "my most peaceful moment",
     activity: "On the water",
   },
   {
-    src: "/about-photo-zion.svg",
+    src: "/about-photo-zion.jpg",
     title: "checkerboard mesa @ zion, utah",
     subtitle: "my favorite rock",
     activity: "Bouldering (inside or out) or hiking",
@@ -66,6 +66,7 @@ export default function PhotoStack() {
                 zIndex: slot.z,
                 transform: `translate(${slot.x}px, ${slot.y}px) rotate(${slot.rotate}deg)`,
                 transition: "transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), z-index 0s",
+                willChange: "transform",
                 left: 0,
                 top: 0,
               }}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 type CursorType = "default" | "pointer" | "text" | "grab" | "grabbed";
 
@@ -33,35 +33,46 @@ function getCursorType(el: Element): CursorType {
 }
 
 export default function CustomCursor() {
-  const [pos, setPos]         = useState({ x: -200, y: -200 });
-  const [type, setType]       = useState<CursorType>("default");
-  const [visible, setVisible] = useState(false);
-  const isMouseDevice = useRef(false);
+  const elRef   = useRef<HTMLDivElement>(null);
+  const typeRef = useRef<CursorType>("default");
 
   useEffect(() => {
     // Only activate on fine-pointer (mouse) devices
     if (!window.matchMedia("(pointer: fine)").matches) return;
-    isMouseDevice.current = true;
+
+    const el = elRef.current;
+    if (!el) return;
+
+    function applyType(t: CursorType) {
+      if (!el) return;
+      typeRef.current = t;
+      const [w, h, ox, oy] = CURSORS[t];
+      el.style.width           = `${w}px`;
+      el.style.height          = `${h}px`;
+      el.style.backgroundImage = `url('/cursors/${t}.svg')`;
+      // keep hotspot offset in sync
+      el.dataset.ox = String(ox);
+      el.dataset.oy = String(oy);
+    }
+
+    applyType("default");
 
     const onMove = (e: MouseEvent) => {
-      setPos({ x: e.clientX, y: e.clientY });
-      setVisible(true);
-      const el = e.target as Element;
-      setType(prev => prev === "grabbed" ? "grabbed" : getCursorType(el));
+      const [,, ox, oy] = CURSORS[typeRef.current];
+      el.style.transform  = `translate(${e.clientX - ox}px, ${e.clientY - oy}px)`;
+      el.style.visibility = "visible";
+      const target = e.target as Element;
+      if (typeRef.current !== "grabbed") applyType(getCursorType(target));
     };
 
     const onDown = (e: MouseEvent) => {
-      const el = e.target as Element;
-      if (el.closest("[data-cursor='grab']")) setType("grabbed");
+      const target = e.target as Element;
+      if (target.closest("[data-cursor='grab']")) applyType("grabbed");
     };
 
-    const onUp = (e: MouseEvent) => {
-      const el = e.target as Element;
-      setType(getCursorType(el));
-    };
-
-    const onLeave = () => setVisible(false);
-    const onEnter = () => setVisible(true);
+    const onUp   = (e: MouseEvent) => applyType(getCursorType(e.target as Element));
+    const onLeave = () => { el.style.visibility = "hidden"; };
+    const onEnter = () => { el.style.visibility = "visible"; };
 
     document.addEventListener("mousemove",  onMove,  { passive: true });
     document.addEventListener("mousedown",  onDown);
@@ -78,22 +89,18 @@ export default function CustomCursor() {
     };
   }, []);
 
-  if (!visible) return null;
-
-  const [w, h, ox, oy] = CURSORS[type];
-
   return (
     <div
+      ref={elRef}
       className="fixed pointer-events-none z-[99999]"
       style={{
-        left: pos.x - ox,
-        top: pos.y - oy,
-        width: w,
-        height: h,
-        backgroundImage: `url('/cursors/${type}.svg')`,
+        top: 0,
+        left: 0,
+        visibility: "hidden",
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "top left",
+        willChange: "transform",
       }}
     />
   );
