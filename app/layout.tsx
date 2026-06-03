@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Header from "./components/Header";
 import CustomCursor from "./components/CustomCursor";
 import "./globals.css";
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
 
         <main className="flex-1 w-full">{children}</main>
+        <Analytics />
 
         {/* ── Footer ──────────────────────────────────────────────── */}
         <footer className="w-full flex
