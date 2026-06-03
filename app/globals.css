@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #1b0703;
+  --text-primary: #f4e8db;
+  --text-secondary: #cd9187;
+  --text-light: #e3dad1;
+  --text-label: #fff9f3;
+  --text-company: #efd9c2;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@theme {
+  /* laptop: ~1200px — proportional desktop layout for laptop screens */
+  --breakpoint-laptop: 75rem;
+  /* xl: 1500px — full desktop (overrides Tailwind default of 1280px)  */
+  --breakpoint-xl: 93.75rem;
+}
+
+/* Hide system cursor on mouse devices — custom cursor takes over */
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
+body {
+  background-color: var(--bg);
+  background-image: radial-gradient(circle, #2F1C18 1.5px, transparent 1.5px);
+  background-size: 13px 13px;
+  color: var(--text-primary);
+  font-family: var(--font-geist-mono), monospace;
+}
