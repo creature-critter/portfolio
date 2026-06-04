@@ -10,21 +10,21 @@ const industries = [
 
 const photos = [
   {
-    src: "/about-photo-zion.svg",
+    src: "/about-photo-zion.webp",
     rotate: "-2.91deg",
     title: "checkerboard mesa @ zion, utah",
     caption: "my favorite rock",
     zIndex: 1,
   },
   {
-    src: "/about-photo-canal.svg",
+    src: "/about-photo-canal.webp",
     rotate: "3.09deg",
     title: "somewhere @ erie canal",
     caption: "my most peaceful moment",
     zIndex: 2,
   },
   {
-    src: "/about-photo-cafe.svg",
+    src: "/about-photo-cafe.webp",
     rotate: "-1.19deg",
     title: "sixby @ savannah, ga",
     caption: "my favorite cafe",
@@ -55,7 +55,7 @@ export default function About() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/about-profile.svg"
+                src="/about-profile.webp"
                 alt="Nicole Mills"
                 className="block w-full h-full"
                 style={{ objectFit: "cover" }}

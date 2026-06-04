@@ -4,19 +4,19 @@ import { useState } from "react";
 
 const photos = [
   {
-    src: "/about-photo-cafe.jpg",
+    src: "/about-photo-cafe.webp",
     title: "sixby @ savannah, ga",
     subtitle: "my favorite cafe",
     activity: "Drinking an espresso tonic",
   },
   {
-    src: "/about-photo-canal.jpg",
+    src: "/about-photo-canal.webp",
     title: "somewhere @ erie canal",
     subtitle: "my most peaceful moment",
     activity: "On the water",
   },
   {
-    src: "/about-photo-zion.jpg",
+    src: "/about-photo-zion.webp",
     title: "checkerboard mesa @ zion, utah",
     subtitle: "my favorite rock",
     activity: "Bouldering (inside or out) or hiking",

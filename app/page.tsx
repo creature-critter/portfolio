@@ -75,7 +75,7 @@ export default function Home() {
                     style={{ aspectRatio: "159 / 341" }}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/patient-home.svg" alt="Patient Home screen"
+                    <img src="/patient-home.webp" alt="Patient Home screen"
                       style={{ display: "block", width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
                     />
                   </div>
@@ -94,7 +94,7 @@ export default function Home() {
                     style={{ aspectRatio: "201 / 434" }}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/patient-device.svg" alt="Patient Device screen"
+                    <img src="/patient-device.webp" alt="Patient Device screen"
                       style={{ display: "block", width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
                     />
                   </div>
