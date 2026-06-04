@@ -144,7 +144,7 @@ export default function Home() {
                   </div>
                   <div className="absolute inset-0 overflow-clip rounded-lg">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/vapotherm_1.svg" alt="Vapotherm clinical dashboard"
+                    <img src="/clinician.webp" alt="Vapotherm clinical dashboard"
                       style={{ display: "block", width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
                     />
                   </div>
