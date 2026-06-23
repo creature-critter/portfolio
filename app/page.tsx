@@ -62,13 +62,21 @@ export default function Home() {
                 md:group-hover:bottom-[30px]
                 md:transition-[bottom] md:duration-300 md:ease-in-out"
               >
-                {/* Left — green → blue */}
+                {/* Left — nature photo + frosted glass */}
                 <div
                   className="overflow-clip relative rounded-lg w-full
                     aspect-[366/428]
                     md:aspect-auto md:flex-1"
-                  style={{ background: "linear-gradient(146.29deg, #68BA6C 18.55%, #5498D0 148.41%)" }}
                 >
+                  <div className="absolute inset-0">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/p2-left-bg.webp" alt="" aria-hidden="true"
+                      style={{ display: "block", width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className="absolute inset-0"
+                    style={{ backdropFilter: "blur(3.5px)", background: "rgba(255,255,255,0.3)" }}
+                  />
                   <div
                     className="absolute -translate-y-1/2 top-[calc(50%+0.5px)] left-[28.14%] right-[28.42%]
                                overflow-clip drop-shadow-[0px_0px_13.5px_rgba(17,20,78,0.35)]"
@@ -81,13 +89,21 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Right — warm orange */}
+                {/* Right — sky photo + frosted glass */}
                 <div
                   className="overflow-clip relative rounded-lg w-full
                     aspect-[366/428]
                     md:aspect-auto md:flex-1"
-                  style={{ background: "linear-gradient(-18.78deg, #E38233 63.79%, #E9B285 147.04%)" }}
                 >
+                  <div className="absolute inset-0">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/p2-right-bg.webp" alt="" aria-hidden="true"
+                      style={{ display: "block", width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className="absolute inset-0"
+                    style={{ backdropFilter: "blur(3.5px)", background: "rgba(255,255,255,0.3)" }}
+                  />
                   <div
                     className="absolute -translate-y-1/2 top-[calc(50%+0.5px)] left-[28.42%] right-[28.14%]
                                overflow-clip drop-shadow-[0px_0px_13.5px_rgba(78,41,17,0.2)]"
@@ -130,7 +146,7 @@ export default function Home() {
                   md:aspect-auto md:absolute md:inset-x-0 md:top-0 md:bottom-0
                   md:group-hover:bottom-[30px]
                   md:transition-[bottom] md:duration-300 md:ease-in-out"
-                style={{ background: "linear-gradient(167.88deg, #2A1955 32.30%, #472D89 95.50%)" }}
+                style={{ background: "linear-gradient(180deg, #2a1955 6.848%, #37216d 57.242%, #2a1955 136.49%)" }}
               >
                 <div
                   className="absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2"
