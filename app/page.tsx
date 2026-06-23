@@ -79,9 +79,10 @@ export default function Home() {
                     style={{ backdropFilter: "blur(3.5px)", background: "rgba(255,255,255,0.3)" }}
                   />
                   <div
-                    className="absolute -translate-y-1/2 top-[calc(50%+0.5px)] left-[28.14%] right-[28.42%]
-                               overflow-clip drop-shadow-[0px_0px_13.5px_rgba(17,20,78,0.35)]"
-                    style={{ aspectRatio: "159 / 341" }}
+                    className="absolute -translate-x-1/2 overflow-clip drop-shadow-[0px_0px_13.5px_rgba(17,20,78,0.35)]
+                               top-[5.64%] bottom-[5.64%]
+                               md:top-[13.44%] md:bottom-[13.45%]"
+                    style={{ left: "calc(50% + 0.18px)", aspectRatio: "196.36065673828125 / 421.12567138671875" }}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src="/patient-home.webp" alt="Patient Home screen"
@@ -107,9 +108,10 @@ export default function Home() {
                     style={{ backdropFilter: "blur(3.5px)", background: "rgba(255,255,255,0.3)" }}
                   />
                   <div
-                    className="absolute -translate-y-1/2 top-[calc(50%+0.5px)] left-[28.42%] right-[28.14%]
-                               overflow-clip drop-shadow-[0px_0px_13.5px_rgba(78,41,17,0.2)]"
-                    style={{ aspectRatio: "201 / 434" }}
+                    className="absolute -translate-x-1/2 overflow-clip drop-shadow-[0px_0px_13.5px_rgba(12,89,132,0.22)]
+                               top-[5.57%] bottom-[5.57%]
+                               md:top-[13.17%] md:bottom-[13.17%]"
+                    style={{ left: "calc(50% + 0.09px)", aspectRatio: "196.181 / 423.596" }}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src="/patient-device.webp" alt="Patient Device screen"
