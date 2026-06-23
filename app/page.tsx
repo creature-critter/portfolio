@@ -151,21 +151,18 @@ export default function Home() {
                 style={{ background: "linear-gradient(180deg, #2a1955 6.848%, #37216d 57.242%, #2a1955 136.49%)" }}
               >
                 <div
-                  className="absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2"
-                  style={{ width: "66.67%", height: "69.16%" }}
+                  className="absolute overflow-clip -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2"
+                  style={{
+                    width: "78.38%",
+                    aspectRatio: "592.541 / 348",
+                    borderRadius: "9.405px",
+                    boxShadow: "0px 0px 13.5px rgba(17, 20, 78, 0.2)",
+                  }}
                 >
-                  <div className="absolute" style={{ left: "-5px", top: "-5px", right: "-5px", bottom: "-5px" }}>
-                    <div className="absolute inset-[-2.61%_-2.14%_-4.58%_-2.14%]">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img alt="" style={{ display: "block", width: "100%", height: "100%" }} src="/p2-frame-stroke.svg" />
-                    </div>
-                  </div>
-                  <div className="absolute inset-0 overflow-clip rounded-lg">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/clinician.webp" alt="Vapotherm clinical dashboard"
-                      style={{ display: "block", width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
-                    />
-                  </div>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/clinician.webp" alt="Vapotherm clinical dashboard"
+                    style={{ display: "block", width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
+                  />
                 </div>
               </div>
 
