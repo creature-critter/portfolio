@@ -52,7 +52,7 @@ export default function Home() {
               label always visible.
             */}
             <div className="relative w-full
-              md:overflow-clip md:aspect-[756/428]"
+              md:overflow-clip md:aspect-[756/576]"
             >
               {/* Cards — stacked mobile, side-by-side md+ */}
               <div className="
@@ -65,7 +65,7 @@ export default function Home() {
                 {/* Left — nature photo + frosted glass */}
                 <div
                   className="overflow-clip relative rounded-lg w-full
-                    aspect-[366/428]
+                    aspect-[366/576]
                     md:aspect-auto md:flex-1"
                 >
                   <div className="absolute inset-0 overflow-hidden">
@@ -93,7 +93,7 @@ export default function Home() {
                 {/* Right — sky photo + frosted glass */}
                 <div
                   className="overflow-clip relative rounded-lg w-full
-                    aspect-[366/428]
+                    aspect-[366/576]
                     md:aspect-auto md:flex-1"
                 >
                   <div className="absolute inset-0 overflow-hidden">
@@ -139,12 +139,12 @@ export default function Home() {
           <a href="/projects/project-two" className="group laptop:flex-1 xl:flex-1">
 
             <div className="relative w-full
-              md:overflow-clip md:aspect-[756/428]"
+              md:overflow-clip md:aspect-[756/576]"
             >
               {/* Card */}
               <div
                 className="overflow-clip relative rounded-lg w-full
-                  aspect-[756/428]
+                  aspect-[756/576]
                   md:aspect-auto md:absolute md:inset-x-0 md:top-0 md:bottom-0
                   md:group-hover:bottom-[30px]
                   md:transition-[bottom] md:duration-300 md:ease-in-out"
