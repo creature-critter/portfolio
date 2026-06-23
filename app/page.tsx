@@ -38,6 +38,53 @@ export default function Home() {
       >
         <div className="flex flex-col laptop:flex-row xl:flex-row gap-6">
 
+          {/* ── Project 2 — clinical dashboard ───────────────────── */}
+          <a href="/projects/project-two" className="group laptop:flex-1 xl:flex-1">
+
+            <div className="relative w-full
+              md:overflow-clip md:aspect-[756/576]"
+            >
+              {/* Card */}
+              <div
+                className="overflow-clip relative rounded-lg w-full
+                  aspect-[756/576]
+                  md:aspect-auto md:absolute md:inset-x-0 md:top-0 md:bottom-0
+                  md:group-hover:bottom-[30px]
+                  md:transition-[bottom] md:duration-300 md:ease-in-out"
+                style={{ background: "linear-gradient(180deg, #2a1955 6.848%, #37216d 57.242%, #2a1955 136.49%)" }}
+              >
+                <div
+                  className="absolute overflow-clip -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2
+                             drop-shadow-[0px_0px_13.5px_rgba(17,20,78,0.2)]"
+                  style={{
+                    width: "78.38%",
+                    aspectRatio: "592.541 / 348",
+                    borderRadius: "9.405px",
+                  }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/clinician.webp" alt="Vapotherm clinical dashboard"
+                    style={{ display: "block", width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
+                  />
+                </div>
+              </div>
+
+              {/* Label */}
+              <div className="
+                mt-3 flex items-center justify-between whitespace-nowrap
+                text-xs tracking-[0.04em] font-normal
+                md:mt-0 md:absolute md:inset-x-0 md:bottom-0 md:h-[30px]
+                md:text-sm md:opacity-0
+                md:translate-y-full md:group-hover:opacity-100 md:group-hover:translate-y-0
+                md:transition-all md:duration-300 md:ease-in-out
+                xl:text-[16px]"
+              >
+                <span style={{ color: "var(--text-label)" }}>At-a-glance COPD patient management</span>
+                <span style={{ color: "var(--text-company)" }}>Vapotherm</span>
+              </div>
+            </div>
+          </a>
+
           {/* ── Project 1 — two half-cards ───────────────────────── */}
           <a href="/projects/project-one" className="group laptop:flex-1 xl:flex-1">
 
@@ -132,53 +179,6 @@ export default function Home() {
                 xl:text-[16px]"
               >
                 <span style={{ color: "var(--text-label)" }}>COPD symptom management made easy</span>
-                <span style={{ color: "var(--text-company)" }}>Vapotherm</span>
-              </div>
-            </div>
-          </a>
-
-          {/* ── Project 2 — clinical dashboard ───────────────────── */}
-          <a href="/projects/project-two" className="group laptop:flex-1 xl:flex-1">
-
-            <div className="relative w-full
-              md:overflow-clip md:aspect-[756/576]"
-            >
-              {/* Card */}
-              <div
-                className="overflow-clip relative rounded-lg w-full
-                  aspect-[756/576]
-                  md:aspect-auto md:absolute md:inset-x-0 md:top-0 md:bottom-0
-                  md:group-hover:bottom-[30px]
-                  md:transition-[bottom] md:duration-300 md:ease-in-out"
-                style={{ background: "linear-gradient(180deg, #2a1955 6.848%, #37216d 57.242%, #2a1955 136.49%)" }}
-              >
-                <div
-                  className="absolute overflow-clip -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2"
-                  style={{
-                    width: "78.38%",
-                    aspectRatio: "592.541 / 348",
-                    borderRadius: "9.405px",
-                    boxShadow: "0px 0px 13.5px rgba(17, 20, 78, 0.2)",
-                  }}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/clinician.webp" alt="Vapotherm clinical dashboard"
-                    style={{ display: "block", width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
-                  />
-                </div>
-              </div>
-
-              {/* Label */}
-              <div className="
-                mt-3 flex items-center justify-between whitespace-nowrap
-                text-xs tracking-[0.04em] font-normal
-                md:mt-0 md:absolute md:inset-x-0 md:bottom-0 md:h-[30px]
-                md:text-sm md:opacity-0
-                md:translate-y-full md:group-hover:opacity-100 md:group-hover:translate-y-0
-                md:transition-all md:duration-300 md:ease-in-out
-                xl:text-[16px]"
-              >
-                <span style={{ color: "var(--text-label)" }}>At-a-glance COPD patient management</span>
                 <span style={{ color: "var(--text-company)" }}>Vapotherm</span>
               </div>
             </div>
