@@ -126,9 +126,9 @@ export default function Home() {
                     style={{ backdropFilter: "blur(3.5px)", background: "rgba(255,255,255,0.3)" }}
                   />
                   <div
-                    className="absolute -translate-x-1/2 overflow-clip drop-shadow-[0px_0px_13.5px_rgba(17,20,78,0.35)]
-                               top-[5.64%] bottom-[5.64%]
-                               md:top-[13.44%] md:bottom-[13.45%]"
+                    className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-clip
+                               drop-shadow-[0px_0px_13.5px_rgba(17,20,78,0.35)]
+                               w-[64.75%] md:w-[53.65%]"
                     style={{ left: "calc(50% + 0.18px)", aspectRatio: "196.36065673828125 / 421.12567138671875" }}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -155,9 +155,9 @@ export default function Home() {
                     style={{ backdropFilter: "blur(3.5px)", background: "rgba(255,255,255,0.3)" }}
                   />
                   <div
-                    className="absolute -translate-x-1/2 overflow-clip drop-shadow-[0px_0px_13.5px_rgba(12,89,132,0.22)]
-                               top-[5.57%] bottom-[5.57%]
-                               md:top-[13.17%] md:bottom-[13.17%]"
+                    className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-clip
+                               drop-shadow-[0px_0px_13.5px_rgba(12,89,132,0.22)]
+                               w-[64.31%] md:w-[53.59%]"
                     style={{ left: "calc(50% + 0.09px)", aspectRatio: "196.181 / 423.596" }}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
