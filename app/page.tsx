@@ -68,10 +68,11 @@ export default function Home() {
                     aspect-[366/428]
                     md:aspect-auto md:flex-1"
                 >
-                  <div className="absolute inset-0">
+                  <div className="absolute inset-0 overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src="/p2-left-bg.webp" alt="" aria-hidden="true"
-                      style={{ display: "block", width: "100%", height: "100%", objectFit: "cover" }}
+                      className="absolute max-w-none"
+                      style={{ width: "333.26%", height: "213.73%", left: "-179.16%", top: "-113.84%" }}
                     />
                   </div>
                   <div className="absolute inset-0"
@@ -95,10 +96,11 @@ export default function Home() {
                     aspect-[366/428]
                     md:aspect-auto md:flex-1"
                 >
-                  <div className="absolute inset-0">
+                  <div className="absolute inset-0 overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src="/p2-right-bg.webp" alt="" aria-hidden="true"
-                      style={{ display: "block", width: "100%", height: "100%", objectFit: "cover" }}
+                      className="absolute max-w-none"
+                      style={{ width: "343.29%", height: "220.16%", left: "-166.3%", top: "-3.39%" }}
                     />
                   </div>
                   <div className="absolute inset-0"
