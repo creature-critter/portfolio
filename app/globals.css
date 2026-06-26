@@ -7,6 +7,32 @@
   --text-light: #e3dad1;
   --text-label: #fff9f3;
   --text-company: #efd9c2;
+  --accent: #bdd1ff;
+  --tooltip-bg: rgb(78, 36, 28);
+  --tooltip-label: rgb(205, 145, 135);
+  --tooltip-shadow: none;
+}
+
+[data-theme="light"] {
+  --bg: #fdf3e9;
+  --text-primary: #220808;
+  --text-secondary: #795e39;
+  --text-light: #795e39;
+  --text-label: #220808;
+  --text-company: #795e39;
+  --accent: #6A8CDA;
+  --tooltip-bg: #f9ede0;
+  --tooltip-label: #795e39;
+  --tooltip-shadow: 0px 4px 6px rgba(104, 66, 12, 0.1);
+}
+
+html:not([data-theme="light"]) .headshot-frame {
+  border-color: #2f1c18;
+  background: linear-gradient(-24.49deg, #1b0703 8.97%, rgba(27,7,3,0.31) 108.56%);
+}
+html[data-theme="light"] .headshot-frame {
+  border-color: #f0ddc9;
+  background: linear-gradient(-24.49deg, rgb(249, 237, 224) 8.97%, rgba(249, 237, 224, 0.2) 108.56%);
 }
 
 @theme inline {
@@ -21,11 +47,59 @@
   --breakpoint-xl: 93.75rem;
 }
 
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  opacity: 0;
+}
+.fade-up.in-view {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+@keyframes lampSway {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(4deg); }
+  50%  { transform: rotate(-2deg); }
+  75%  { transform: rotate(1deg); }
+  90%  { transform: rotate(-0.4deg); }
+  100% { transform: rotate(0deg); }
+}
+/* Identical — toggling between the two names forces the browser to restart the animation */
+@keyframes lampSwayB {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(4deg); }
+  50%  { transform: rotate(-2deg); }
+  75%  { transform: rotate(1deg); }
+  90%  { transform: rotate(-0.4deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes wonderWave {
+  0%   { transform: translateY(0)   rotate(0deg); }
+  22%  { transform: translateY(-8px) rotate(-3deg); }
+  45%  { transform: translateY(3px) rotate(1.5deg); }
+  65%  { transform: translateY(-3px) rotate(-1deg); }
+  82%  { transform: translateY(1px) rotate(0.5deg); }
+  100% { transform: translateY(0)   rotate(0deg); }
+}
+
 /* Hide system cursor on mouse devices — custom cursor takes over */
 @media (pointer: fine) {
   *, *::before, *::after {
     cursor: none !important;
   }
+}
+
+::selection {
+  background-color: #bdd1ff;
+  color: #1b0703;
+}
+
+[data-theme="light"] ::selection {
+  background-color: #6A8CDA;
+  color: #f9ede0;
 }
 
 body {
@@ -34,4 +108,9 @@ body {
   background-size: 13px 13px;
   color: var(--text-primary);
   font-family: var(--font-geist-mono), monospace;
+  transition: background-color 0.5s ease, color 0.3s ease;
+}
+
+[data-theme="light"] body {
+  background-image: radial-gradient(circle, rgba(240, 222, 215, 0.7) 1.5px, rgba(240, 222, 215, 0) 1.5px);
 }
