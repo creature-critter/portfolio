@@ -1,47 +1,62 @@
 "use client";
 
 import { useState } from "react";
+import { useTheme } from "./ThemeContext";
 
 const photos = [
   {
     src: "/about-photo-cafe.webp",
-    title: "sixby @ savannah, ga",
-    subtitle: "my favorite cafe",
-    activity: "Drinking an espresso tonic",
+    title: "@ sixby",
+    subtitle: "in savannah, ga",
+    activeTitle: "@ sixby",
+    activeSubtitle: "in savannah, ga",
   },
   {
     src: "/about-photo-canal.webp",
     title: "somewhere @ erie canal",
     subtitle: "my most peaceful moment",
-    activity: "On the water",
+    activeTitle: "traveling the locks",
+    activeSubtitle: "in the erie canal",
   },
   {
     src: "/about-photo-zion.webp",
     title: "checkerboard mesa @ zion, utah",
     subtitle: "my favorite rock",
-    activity: "Bouldering (inside or out) or hiking",
+    activeTitle: "exploring and hiking",
+    activeSubtitle: "in zion natl. park",
+  },
+  {
+    src: "/about-photo-sailing.png",
+    title: "sailing on a boat!",
+    subtitle: "somewhere tropical",
+    activeTitle: "sailing on a boat!",
+    activeSubtitle: "somewhere in the caribbean",
   },
 ];
 
-// Slot positions for the 3 depth layers
-// front → mid → back, cycling on each click
+// Slot positions for the 4 depth layers, front → back
 const slots = [
-  { x: 30,  y: 44,  rotate: -1.19, z: 30 }, // front
-  { x: -50, y: -10, rotate: 4.5,   z: 20 }, // mid-back
-  { x: 80,  y: -8,  rotate: -3.8,  z: 10 }, // far-back
+  { x: 30,  y: 55, rotate: -1.19, z: 40 }, // front
+  { x: 0,   y: 18, rotate:  3.09, z: 30 }, // 2nd
+  { x: 58,  y: 16, rotate: -2.91, z: 20 }, // 3rd
+  { x: 35,  y: 0,  rotate:  7.82, z: 10 }, // back
 ];
 
 export default function PhotoStack() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const { theme } = useTheme();
+  const isLight = theme === "light";
+
+  const cardBorder  = isLight ? "#f0ddc9"                      : "#2f1c18";
+  const cardBg      = isLight ? "#f9ede0"                      : "#1b0703";
+  const cardShadow  = isLight ? "0px 0px 13.8px 0px rgba(128,108,74,0.12)" : "0px 0px 13.8px 0px rgba(12,3,1,0.76)";
 
   const handleClick = () => {
     setActiveIndex((prev) => (prev + 1) % photos.length);
   };
 
-  const activePhoto = photos[activeIndex];
-
   return (
-    <div className="flex flex-col items-center gap-4 w-full">
+    <div className="flex flex-col items-center w-full">
 
       {/* Stack */}
       <button
@@ -52,16 +67,19 @@ export default function PhotoStack() {
         data-cursor="grab"
       >
         {photos.map((photo, photoIndex) => {
-          // Which slot does this photo occupy?
           const slotIndex = (photoIndex - activeIndex + photos.length) % photos.length;
           const slot = slots[slotIndex];
+          const isActive = slotIndex === 0;
+          const displayTitle = isActive ? photo.activeTitle : photo.title;
+          const displaySubtitle = isActive ? photo.activeSubtitle : photo.subtitle;
 
           return (
             <div
               key={photo.src}
-              className="absolute rounded-lg border overflow-hidden shadow-[0px_0px_13.8px_0px_rgba(12,3,1,0.76)]"
+              className="absolute rounded-lg border overflow-hidden"
               style={{
-                borderColor: "#2f1c18",
+                boxShadow: cardShadow,
+                borderColor: cardBorder,
                 width: "460px",
                 zIndex: slot.z,
                 transform: `translate(${slot.x}px, ${slot.y}px) rotate(${slot.rotate}deg)`,
@@ -74,40 +92,30 @@ export default function PhotoStack() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={photo.src}
-                alt={photo.title}
+                alt={displayTitle}
                 style={{ display: "block", width: "100%", aspectRatio: "532/353", objectFit: "cover" }}
               />
               <div
                 className="py-3 flex flex-col gap-1 items-center"
-                style={{ background: "#1b0703" }}
+                style={{ background: cardBg }}
               >
                 <p
                   className="font-bold text-[13px] tracking-[0.04em] text-center whitespace-nowrap"
                   style={{ color: "var(--text-light)" }}
                 >
-                  {photo.title}
+                  {displayTitle}
                 </p>
                 <p
                   className="font-normal text-[12px] tracking-[0.04em] text-center"
                   style={{ color: "var(--text-light)" }}
                 >
-                  {photo.subtitle}
+                  {displaySubtitle}
                 </p>
               </div>
             </div>
           );
         })}
       </button>
-
-      {/* Activity caption — changes with active photo */}
-      <p
-        className="font-light tracking-[0.04em] text-center transition-opacity duration-300
-          text-base md:text-lg laptop:text-[18px] xl:text-[24px]"
-        style={{ color: "var(--text-light)" }}
-        key={activePhoto.activity} // re-triggers fade if you add animation
-      >
-        {activePhoto.activity}
-      </p>
 
     </div>
   );
