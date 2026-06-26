@@ -1,3 +1,5 @@
+import FadeUp from "@/app/components/FadeUp";
+
 export default function Home() {
   return (
     <div className="flex flex-col
@@ -5,6 +7,7 @@ export default function Home() {
     >
 
       {/* ── Hero ─────────────────────────────────────────────────── */}
+      <FadeUp>
       <section className="
         px-6   pt-16
         md:px-12 md:pt-20
@@ -28,8 +31,10 @@ export default function Home() {
           </p>
         </div>
       </section>
+      </FadeUp>
 
       {/* ── Projects ─────────────────────────────────────────────── */}
+      <FadeUp delay={100}>
       <section id="projects" className="
         px-6   pb-12
         md:px-12
@@ -186,6 +191,7 @@ export default function Home() {
 
         </div>
       </section>
+      </FadeUp>
     </div>
   );
 }
